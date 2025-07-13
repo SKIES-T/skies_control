@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>SKIES CONTROL</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hud">
+    <h1 class="title">SKIES CONTROL</h1>
+    <div class="device">
+      <h2>LED 1</h2>
+      <p>status: <span id="status-led1">-</span></p>
+      <button onclick="control('led1', 'on')">🔆 ON</button>
+      <button onclick="control('led1', 'off')">💤 OFF</button>
+    </div>
+
+    <div class="device">
+      <h2>LED 2</h2>
+      <p>status: <span id="status-led2">-</span></p>
+      <button onclick="control('led2', 'on')">🔆 ON</button>
+      <button onclick="control('led2', 'off')">💤 OFF</button>
+    </div>
+
+    <div class="device">
+      <h2>FAN</h2>
+      <p>status: <span id="status-fan">-</span></p>
+      <button onclick="control('fan', 'on')">🔆 ON</button>
+      <button onclick="control('fan', 'off')">💤 OFF</button>
+    </div>
+
+         <button onclick="resetIP()" style="margin-bottom: 20px;">🔄 Switch devices</button>
+
+  </div>
+
+  <script src="server.js"></script>
+</body>
+</html>

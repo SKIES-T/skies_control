@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Connect to Device</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hud">
+    <h1 class="title">🔗 เชื่อมต่ออุปกรณ์ IoT</h1>
+    <p>กรอก IP ของอุปกรณ์:</p>
+    <input type="text" id="ipInput" placeholder="เช่น http://192.168.4.1">
+    <br><br>
+    <button onclick="saveIP()">➡️ ไปหน้าควบคุม</button>
+  </div>
+
+  <script>
+    function saveIP() {
+      const ip = document.getElementById('ipInput').value.trim();
+      if (!ip.startsWith('http://') && !ip.startsWith('https://')) {
+        alert("กรุณาใส่ http:// ด้วย เช่น http://192.168.4.1");
+        return;
+      }
+      localStorage.setItem('device_ip', ip);
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>
